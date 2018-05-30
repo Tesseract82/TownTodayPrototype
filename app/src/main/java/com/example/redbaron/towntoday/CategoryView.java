@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.View;
 
@@ -17,7 +18,6 @@ public class CategoryView extends View {
     public boolean checked;
     Bitmap tile;
     Bitmap highlight;
-    Bitmap categoryInfo;
 
     public CategoryView(Context context, final String identification) {
         super(context);
@@ -29,18 +29,6 @@ public class CategoryView extends View {
         tile = scaleDown(BitmapFactory.decodeResource(context.getResources(), context.getResources().getIdentifier(identification, "drawable", context.getPackageName())), Constants.dpWidth - 2 * Constants.dpPadding, false);
         highlight = scaleDown(BitmapFactory.decodeResource(context.getResources(), R.drawable.tile_highlight), Constants.dpWidth - 2 * Constants.dpPadding, false);
 
-        this.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checked = !checked;
-                if(checked){
-                    Constants.selected.add(identification);
-                } else {
-                    Constants.selected.remove(identification);
-                }
-                invalidate();
-            }
-        });
     }
 
     @Override
