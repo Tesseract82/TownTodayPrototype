@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 NetflixFragment netflixFragment = new NetflixFragment();
                 fragmentTransaction2.replace(R.id.fragment_area, netflixFragment);
                 fragmentTransaction2.commit();
+                findViewById(R.id.container).setBackgroundColor(getResources().getColor(android.R.color.background_dark));
                 break;
             case R.id.bar_right_img:
                 //Favorite Activity

@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventActivity">
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation2" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EventFragment">
 
     <ScrollView
         android:layout_width="368dp"
@@ -31,16 +19,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tile_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brown Bag With Brian"
+                android:text="Meet the New Chancellor"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -51,39 +38,48 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/desban" />
 
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_gravity="clip_horizontal"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/img_location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     app:srcCompat="@drawable/ic_action_map" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1234 Example Rd."
+                    android:layout_weight="2"
                     android:textColor="@android:color/black"
                     android:textSize="15sp" />
 
                 <Space
-                    android:layout_width="30dp"
-                    android:layout_height="0dp" />
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
                 <ImageView
                     android:id="@+id/img_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     app:srcCompat="@drawable/ic_action_time" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12:00 PM, 6/7/18"
+                    android:layout_weight="2"
                     android:textColor="@android:color/black"
                     android:textSize="15sp" />
 
@@ -96,37 +92,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/img_mail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="2"
                     app:srcCompat="@drawable/ic_action_mail" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sam Smith"
+                    android:text="Berin Selimotic"
+                    android:layout_weight="2"
                     android:textColor="@android:color/black"
                     android:textSize="15sp" />
 
                 <Space
                     android:layout_width="30dp"
-                    android:layout_height="0dp" />
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
                 <ImageView
                     android:id="@+id/img_ticket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_action_ticket" />
+                    app:srcCompat="@drawable/ic_action_ticket"
+                    android:layout_weight="2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Get Tickets"
                     android:textColor="@android:color/black"
+                    android:layout_weight="2"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -157,6 +157,7 @@
                 android:id="@+id/img_event_specific_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
                 app:srcCompat="@drawable/googlemap" />
 
         </LinearLayout>
@@ -164,4 +165,5 @@
 
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

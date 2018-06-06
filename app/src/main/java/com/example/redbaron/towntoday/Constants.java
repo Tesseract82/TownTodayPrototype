@@ -16,12 +16,11 @@ public class Constants {
     public static float dpEventPadding = 15;
     public static Set<String> selected= new HashSet<>();
     public static ArrayList<String> categories;
-    public static ArrayList<EventThumbView> conventions, charity, concerts, art, festivals;
+    public static ArrayList<EventThumbView> conventions, charity, college, art, festivals;
     public static Map<String, ArrayList<EventThumbView>> eventThumbs;
 
-
     static{
-        categories = new ArrayList<>(Arrays.asList("a21", "after5pm", "art", "casino", "charity", "comedy", "concerts", "contests", "dancing", "educational", "electronics",
+        categories = new ArrayList<>(Arrays.asList("college", "a21", "after5pm", "art", "casino", "charity", "comedy", "concerts", "contests", "dancing", "educational", "electronics",
                 "environment", "farmersmarket", "festivals", "foodtrucks", "free", "fundraiser", "holiday", "jobfair", "jobfairpremium", "kids", "meetup", "movies", "nearme",
                 "nearmepremium", "networking", "openhouse", "petfriendly", "political", "premium", "religious", "sports", "townpics", "yardsale"));
         eventThumbs = new HashMap<String, ArrayList<EventThumbView>>();
@@ -34,8 +33,8 @@ public class Constants {
 //                new EventThumbView(c, "three"), new EventThumbView(c, "four"), new EventThumbView(c, "five")));
         charity = new ArrayList<>(Arrays.asList(new EventThumbView(c, "six"), new EventThumbView(c, "seven"),
                 new EventThumbView(c, "eight"), new EventThumbView(c, "nine"), new EventThumbView(c, "ten")));
-        concerts = new ArrayList<>(Arrays.asList(new EventThumbView(c, "eleven"), new EventThumbView(c, "twelve"),
-                new EventThumbView(c, "thirteen"), new EventThumbView(c, "fourteen"), new EventThumbView(c, "fifteen")));
+        college = new ArrayList<>(Arrays.asList(new EventThumbView(c, "eleven"), new EventThumbView(c, "twelve"),
+                new EventThumbView(c, "desban"), new EventThumbView(c, "fourteen"), new EventThumbView(c, "fifteen")));
         art = new ArrayList<>(Arrays.asList(new EventThumbView(c, "sixteen"), new EventThumbView(c, "seventeen"),
                 new EventThumbView(c, "eighteen"), new EventThumbView(c, "nineteen"), new EventThumbView(c, "twenty")));
 //        festivals = new ArrayList<>(Arrays.asList(new EventThumbView(c, "twentytwo"),
@@ -43,7 +42,7 @@ public class Constants {
 
 //        eventThumbs.put("conventions", conventions);
         eventThumbs.put("charity", charity);
-        eventThumbs.put("concerts", concerts);
+        eventThumbs.put("college", college);
         eventThumbs.put("art", art);
 //        eventThumbs.put("festivals", festivals);
     }

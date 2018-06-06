@@ -1,11 +1,15 @@
 package com.example.redbaron.towntoday;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +34,7 @@ public class NetflixFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +53,8 @@ public class NetflixFragment extends Fragment {
                 continue;
             }
             TextView categoryTitle = new TextView(getActivity());
-            categoryTitle.setText(key.toUpperCase());
+            categoryTitle.setTextAppearance(android.R.style.TextAppearance_Holo);
+            categoryTitle.setText(key.substring(0, 1).toUpperCase() + key.substring(1).toLowerCase());
             categoryTitle.setTextSize(25);
             categoryTitle.setTextColor(Color.rgb(237, 197, 37));
             mainLinear.addView(categoryTitle);
@@ -62,8 +68,12 @@ public class NetflixFragment extends Fragment {
                 etv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent eventIntent = new Intent(getActivity(), EventActivity.class);
-                        startActivity(eventIntent);
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        FragmentTransaction ft = fm.beginTransaction();
+                        EventFragment efv = new EventFragment();
+                        ft.replace(R.id.fragment_area, efv);
+                        ft.commit();
+                        getActivity().findViewById(R.id.container).setBackgroundColor(getResources().getColor(android.R.color.background_light));
                     }
                 });
                 linear2.addView(etv);
